@@ -1,0 +1,13 @@
+record(ai, "viktig") {
+    field(VAL, "1")
+    field(ASG, "CRIT_PARAM")
+}
+
+record(ai, "vanlig") {
+    field(VAL, "10")
+    field(ASG, "DEFAULT")
+}
+
+record(ao, "ointressant") {
+    field(VAL, "100")
+}

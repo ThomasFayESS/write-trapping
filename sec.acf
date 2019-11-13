@@ -1,0 +1,15 @@
+UAG(uag) {iocuser}
+HAG(hag) {icslab-e3share-test} 
+ASG(DEFAULT) {
+  INPA(MUMBLE)
+  RULE(1,READ)
+  RULE(1,WRITE) {
+    HAG(hag)
+ }
+}
+ASG(CRIT_PARAM) {
+  RULE(1,READ)
+  RULE(1,WRITE) {
+    UAG(uag)
+  }
+}
