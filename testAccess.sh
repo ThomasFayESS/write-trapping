@@ -13,14 +13,14 @@ function caput_test()
 {
   curVal=$(caget -t $1) 
   a=$(caput $1 $curVal 2>&1 > /dev/null)
-  [[ ${#a} -gt 0 ]] && echo "..caput write to $1: $a"
+  [[ ${#a} -gt 0 ]] && echo "..CA write to $1: $a"
 }
 
 function pvput_test()
 {
   curVal=$(caget -t $1 2>&1) 
   a=$(pvput $1 $curVal 2>&1 >/dev/null)
-  [[ ${#a} -gt 0 ]] && echo "..pvput write to $1: $a"
+  [[ ${#a} -gt 0 ]] && echo "..write by PVA to $1: $a"
 
 }
 
