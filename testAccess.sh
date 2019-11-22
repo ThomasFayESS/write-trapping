@@ -31,10 +31,10 @@ date > $logFile
 for PV in `cat ./listPV`
 do
   echo -n "Testing PV: $PV [" | tee -a "$logFile"
-
-  recordType=$(caget $PV -d 38 2>&1 | grep 'Class Name:')
+  recordType=$(caget $PV -d 38 2>&1)
   [[ $recordType == *"timed out"* ]] && echo "Couldn't find PV on network, exiting... " | tee -a "$logFile" && exit
 
+  # Check PV record type
   [[ $recordType == *ai* ]] && recordType="ai" && echo "ai record]" | tee -a "$logFile" && declare -a arrFields=(VAL HIGH HIHI LOW LOLO)
   [[ $recordType == *ao* ]] && recordType="ao" && echo "ao record]" | tee -a "$logFile" && declare -a arrFields=(VAL OROC DRVH DRVL HIGH HIHI LOW LOLO)
   [[ $recordType == *bi* ]] && recordType="ai" && echo "bi record]" | tee -a "$logFile" && declare -a arrFields=(VAL)
