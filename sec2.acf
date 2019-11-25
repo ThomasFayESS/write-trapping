@@ -1,4 +1,4 @@
-UAG(engineer) {iocuser}
+UAG(engineer) {"role/iocgroup"}
 UAG(operator) {iocuser, ops}
 HAG(NCL_CRIT_PARAM_WS) {"vm-rfq-lps"}
 ASG(DEFAULT) {
