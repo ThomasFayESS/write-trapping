@@ -1,16 +1,27 @@
 UAG(engineer) {"role/iocgroup"}
 UAG(operator) {iocuser, ops}
-HAG(NCL_CRIT_PARAM_WS) {"vm-rfq-lps"}
+HAG(NCL_CRIT_PARAM_WS) {"$(HOSTNAME)"}
+HAG(ICS_CRIT_PARAM_WS) {"$(HOSTNAME)"}
+
 ASG(DEFAULT) {
   RULE(1,READ)
   RULE(1,WRITE) {
     UAG(operator)
  }
 }
-ASG(CRIT_PARAM) {
+
+ASG(NCL_CRIT_PARAM) {
   RULE(1,READ)
   RULE(1,WRITE) {
     UAG(engineer)
     HAG(NCL_CRIT_PARAM_WS)
+  }
+}
+
+ASG(ICS_CRIT_PARAM) {
+  RULE(1,READ)
+  RULE(1,WRITE)  {
+    UAG(engineer)
+    HAG(ICS_CRIT_PARAM_WS)
   }
 }

@@ -1,15 +1,15 @@
-UAG(uag) {iocuser}
-HAG(hag) {icslab-e3share-test} 
+UAG(NCL_ENGINEER) {iocuser,thomasfay}
+HAG(NCL_CRIT_PARAM_WS) {"$(HOSTNAME)"} 
 ASG(DEFAULT) {
-  INPA(MUMBLE)
   RULE(1,READ)
   RULE(1,WRITE) {
-    HAG(hag)
+    HAG(NCL_CRIT_PARAM_WS)
  }
 }
-ASG(CRIT_PARAM) {
+ASG(NCL_CRIT_PARAM) {
   RULE(1,READ)
   RULE(1,WRITE) {
-    UAG(uag)
+    UAG(NCL_ENGINEER)
+    HAG(NCL_CRIT_PARAM_WS)
   }
 }
