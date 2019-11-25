@@ -1,6 +1,6 @@
 record(ai, "viktig") {
     field(VAL, "1")
-    field(ASG, "CRIT_PARAM")
+    field(ASG, "NCL_CRIT_PARAM")
 }
 
 record(ai, "vanlig") {
